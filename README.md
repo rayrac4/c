@@ -1,0 +1,75 @@
+# c
+barbearia
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia</title>
+    <style>
+        /* Estilos CSS para o site */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Serviços</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <h1>Bem-vindo à Barbearia</h1>
+
+    <form>
+        <h2>Agende sua visita</h2>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required><br><br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" required><br><br>
+        <label for="date">Data:</label>
+        <input type="date" id="date" required><br><br>
+        <button type="submit">Agendar</button>
+    </form>
+
+    <script>
+        // Script JavaScript para validação do formulário
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const date = document.getElementById('date').value;
+
+            if (name && email && date) {
+                alert(`Agendamento confirmado para ${name} no dia ${date}.`);
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+
+</html>
